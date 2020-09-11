@@ -4,7 +4,10 @@
       <div class="todo-wrap">
         <TodosHead @addTodos='addTodos'/><!--@addTodo:自定义事件名，"addTodo" 回调函数-->
         <TodosList :todos="todos"/>
-        <TodosFoot :todos="todos" :selectAllTodos="selectAllTodos" :deleteCompleteTodos="deleteCompleteTodos"/>
+         <TodosFoot :todos="todos" :selectAllTodos="selectAllTodos" :deleteCompleteTodos="deleteCompleteTodos"/> 
+        <!-- <TodosFoot>
+          <input type="checkbox" v-model="checkAll" slot="check"/> 
+        </TodosFoot> -->
       </div>
     </div>
   </div>
@@ -34,7 +37,9 @@
         //     complete: false
         //   },
         // ]
-        todos: storageUtil.readTodos()
+
+        //todos: JSON.parse(window.localStorage.getItem(TODOS_KEY) || '[]')
+        todos: storageUtil.readTodos()  //封装工具类
       }
     },
     mounted() {
@@ -67,7 +72,9 @@
     watch: { //监视
       deep: true, //深度监视
       handler: function(value){ //回调会在监听后立即调用
-        storageUtil.saveTodos(value)
+
+        //window.localStorage.setItem(TODOS_KEY),JSON.stringify(todos)
+        storageUtil.saveTodos(value) //封装工具类
       }
     },
 
