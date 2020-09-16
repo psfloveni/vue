@@ -2,9 +2,7 @@
   <div>
     <div class="row">
       <div class="col-xs-offset-2 col-xs-8">
-        <div class="page-header">
-          <h2>Router Test</h2>
-        </div>
+        <div class="page-header"><h2>Router Test</h2></div>
       </div>
     </div>
     <div class="row">
@@ -19,10 +17,7 @@
         <div class="panel">
           <div class="panel-body">
             <!--显示当前组件-->
-            <keep-alive>
-              <router-view  msg="abc"></router-view>
-            </keep-alive>
-            
+              <router-view></router-view>
           </div>
         </div>
       </div>
@@ -31,10 +26,11 @@
 </template>
 
 <script>
-  export default {
 
+export default {
 
-  }
+}
+
 </script>
 
 <style>
